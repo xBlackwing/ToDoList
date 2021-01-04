@@ -13,7 +13,7 @@ taskFilter.addEventListener("click", filterTask);
 function createTask(e) {
   e.preventDefault();
   //If text input is empty
-  if (!taskInput.value == " ") {
+  if (!taskInput.value == "") {
     //Create div
     const taskDiv = document.createElement("div");
     taskDiv.classList.add("task");
