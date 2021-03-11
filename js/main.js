@@ -52,8 +52,9 @@ function deleteTask(e) {
 }
 
 function filterTask(e) {
-  //Store each task in the task list in a tasks array
-  const tasks = taskList.childNodes;
+  /* Store each task in the task list in a tasks array using the spread operator (otherwise 
+    using just .children produces an HTML collection which cannot be itered over with forEach) */
+  const tasks = [...taskList.children];
   tasks.forEach((task) => {
     switch (e.target.value) {
       //Show all tasks
@@ -70,10 +71,10 @@ function filterTask(e) {
         break;
       //Show only uncompleted tasks
       case "uncompleted":
-        if (task.classList.contains("complete")) {
-          task.style.display = "none";
-        } else {
+        if (!task.classList.contains("complete")) {
           task.style.display = "flex";
+        } else {
+          task.style.display = "none";
         }
         break;
     }
