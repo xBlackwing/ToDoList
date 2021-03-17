@@ -1,78 +1,94 @@
+/* Base */
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 body {
+  background-color: sandybrown;
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
 }
 
-.wrapper {
+/* Main */
+.main {
   max-width: 480px;
   margin: 50px auto;
   padding: 0 30px 20px;
   border-radius: 20px;
+  display: -webkit-box;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: sandybrown;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
 }
 
-h1 {
+.main__title {
   color: white;
   font-size: 3rem;
   padding: 2rem 0;
 }
 
-form {
+/* Form */
+.form {
   width: 100%;
+  display: -webkit-box;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+          align-items: center;
   margin-bottom: 1rem;
 }
 
-.task-input {
+.form__input {
   width: 70%;
   border: none;
   outline: none;
   padding: 1rem;
 }
 
-.task-filter {
+.form__dropdown {
   width: 30%;
   border: none;
   outline: none;
   padding: 0.95rem;
 }
 
-.task-container {
-  width: 100%;
-}
-
-.task-list {
+/* Task */
+.tasks {
   list-style: none;
 }
 
+.tasks__container {
+  width: 100%;
+}
+
 .task {
+  display: -webkit-box;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+          align-items: center;
   background-color: white;
   margin: 1rem 0;
   padding-left: 1rem;
 }
 
-.task-item {
-  flex: 1;
+.task__item {
+  -webkit-box-flex: 1;
+          flex: 1;
 }
 
-.btn {
+/* Button */
+.button {
   outline: none;
   border: none;
   border-radius: 1px;
@@ -81,28 +97,21 @@ form {
   padding: 1rem 1.1rem;
 }
 
-.btn:hover {
+.button:hover {
   opacity: 0.9;
   cursor: pointer;
 }
 
-.task-complete {
-  background-color: mediumaquamarine;
-}
-
-.task-delete {
-  background-color: tomato;
-}
-
-button i {
+.button__icon {
   pointer-events: none;
 }
 
-@media (max-width: 480px) {
-  body {
-    background-color: sandybrown;
-  }
-  .wrapper {
-    box-shadow: none;
-  }
+.button--complete {
+  background-color: mediumaquamarine;
 }
+
+.button--delete {
+  background-color: tomato;
+}
+
+/* Media queries */

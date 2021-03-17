@@ -1,51 +1,51 @@
 //Variables
-const taskInput = document.querySelector(".task-input");
-const taskSubmit = document.querySelector(".task-submit");
-const taskList = document.querySelector(".task-list");
-const taskFilter = document.querySelector(".task-filter");
+const formInput = document.querySelector(".form__input");
+const formDropdown = document.querySelector(".form__dropdown");
+const buttonAdd = document.querySelector(".button--add");
+const tasks = document.querySelector(".tasks");
 
 //Event listeners
-taskSubmit.addEventListener("click", createTask);
-taskList.addEventListener("click", deleteTask);
-taskFilter.addEventListener("click", filterTask);
+buttonAdd.addEventListener("click", createTask);
+tasks.addEventListener("click", deleteTask);
+formDropdown.addEventListener("click", filterTask);
 
 //Functions
 function createTask(e) {
   e.preventDefault();
   //If text input is empty
-  if (!taskInput.value == "") {
+  if (!formInput.value == "") {
     //Create div
-    const taskDiv = document.createElement("div");
-    taskDiv.classList.add("task");
-    taskList.appendChild(taskDiv);
+    const task = document.createElement("div");
+    task.classList.add("task");
+    tasks.appendChild(task);
     //Create li
-    const taskLi = document.createElement("li");
-    taskLi.classList.add("task-item");
-    taskLi.innerHTML = taskInput.value;
-    taskDiv.appendChild(taskLi);
+    const taskItem = document.createElement("li");
+    taskItem.classList.add("task__item");
+    taskItem.innerHTML = formInput.value;
+    task.appendChild(taskItem);
     //Create complete button
-    const taskComplete = document.createElement("button");
-    taskComplete.classList.add("task-complete", "btn");
-    taskComplete.innerHTML = `<i class="fas fa-check"></i>`;
-    taskDiv.appendChild(taskComplete);
+    const buttonComplete = document.createElement("button");
+    buttonComplete.classList.add("button", "button--complete");
+    buttonComplete.innerHTML = `<i class="button__icon fas fa-check"></i>`;
+    task.appendChild(buttonComplete);
     //Create delete button
-    const taskDelete = document.createElement("button");
-    taskDelete.classList.add("task-delete", "btn");
-    taskDelete.innerHTML = `<i class="fas fa-trash"></i>`;
-    taskDiv.appendChild(taskDelete);
+    const buttonDelete = document.createElement("button");
+    buttonDelete.classList.add("button", "button--delete");
+    buttonDelete.innerHTML = `<i class="button__icon fas fa-trash"></i>`;
+    task.appendChild(buttonDelete);
     //Clear text from input
-    taskInput.value = "";
+    formInput.value = "";
   }
 }
 
 function deleteTask(e) {
   //If target is complete button
-  if (e.target.classList.contains("task-complete")) {
+  if (e.target.classList.contains("button--complete")) {
     //Crossout list item text
     e.target.parentNode.style.textDecoration = "line-through";
-    e.target.parentNode.classList.add("complete");
+    e.target.parentNode.classList.add("task--complete");
   } //If target is delete button
-  else if (e.target.classList.contains("task-delete")) {
+  else if (e.target.classList.contains("button--delete")) {
     //Remove the entire parent div
     e.target.parentNode.remove();
   }
@@ -54,8 +54,8 @@ function deleteTask(e) {
 function filterTask(e) {
   /* Store each task in the task list in a tasks array using the spread operator (otherwise 
     using just .children produces an HTML collection which cannot be itered over with forEach) */
-  const tasks = [...taskList.children];
-  tasks.forEach((task) => {
+  const tasksArray = [...tasks.children];
+  tasksArray.forEach((task) => {
     switch (e.target.value) {
       //Show all tasks
       case "all":
@@ -63,7 +63,7 @@ function filterTask(e) {
         break;
       //Show only completed tasks
       case "completed":
-        if (task.classList.contains("complete")) {
+        if (task.classList.contains("task--complete")) {
           task.style.display = "flex";
         } else {
           task.style.display = "none";
@@ -71,7 +71,7 @@ function filterTask(e) {
         break;
       //Show only uncompleted tasks
       case "uncompleted":
-        if (!task.classList.contains("complete")) {
+        if (!task.classList.contains("task--complete")) {
           task.style.display = "flex";
         } else {
           task.style.display = "none";

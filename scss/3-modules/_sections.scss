@@ -1,0 +1,93 @@
+/* Main */
+
+.main {
+  max-width: 480px;
+  margin: 50px auto;
+  padding: 0 30px 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__title {
+    color: white;
+    font-size: 3rem;
+    padding: 2rem 0;
+  }
+}
+
+/* Form */
+
+.form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  &__input {
+    width: 70%;
+    border: none;
+    outline: none;
+    padding: 1rem;
+  }
+
+  &__dropdown {
+    width: 30%;
+    border: none;
+    outline: none;
+    padding: 0.95rem;
+  }
+}
+
+/* Task */
+
+.tasks {
+  list-style: none;
+
+  &__container {
+    width: 100%;
+  }
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  margin: 1rem 0;
+  padding-left: 1rem;
+
+  &__item {
+    flex: 1;
+  }
+}
+
+/* Button */
+
+.button {
+  outline: none;
+  border: none;
+  border-radius: 1px;
+  background-color: #999999;
+  color: white;
+  padding: 1rem 1.1rem;
+
+  &:hover {
+    opacity: 0.9;
+    cursor: pointer;
+  }
+
+  &__icon {
+    pointer-events: none;
+  }
+
+  &--complete {
+    background-color: mediumaquamarine;
+  }
+
+  &--delete {
+    background-color: tomato;
+  }
+}
