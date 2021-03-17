@@ -14,10 +14,6 @@ body {
 
 /* Main */
 .main {
-  max-width: 480px;
-  margin: 50px auto;
-  padding: 0 30px 20px;
-  border-radius: 20px;
   display: -webkit-box;
   display: flex;
   -webkit-box-orient: vertical;
@@ -27,38 +23,42 @@ body {
           justify-content: center;
   -webkit-box-align: center;
           align-items: center;
+  max-width: 480px;
+  margin: 50px auto;
+  padding: 0 30px 20px;
+  border-radius: 20px;
 }
 
 .main__title {
+  padding: 2rem 0;
   color: white;
   font-size: 3rem;
-  padding: 2rem 0;
 }
 
 /* Form */
 .form {
-  width: 100%;
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: justify;
           justify-content: space-between;
   -webkit-box-align: center;
           align-items: center;
+  width: 100%;
   margin-bottom: 1rem;
 }
 
 .form__input {
   width: 70%;
+  padding: 1rem;
   border: none;
   outline: none;
-  padding: 1rem;
 }
 
 .form__dropdown {
   width: 30%;
+  padding: 0.95rem;
   border: none;
   outline: none;
-  padding: 0.95rem;
 }
 
 /* Task */
@@ -77,9 +77,9 @@ body {
           justify-content: space-between;
   -webkit-box-align: center;
           align-items: center;
-  background-color: white;
   margin: 1rem 0;
   padding-left: 1rem;
+  background-color: white;
 }
 
 .task__item {
@@ -89,12 +89,12 @@ body {
 
 /* Button */
 .button {
-  outline: none;
+  padding: 1rem 1.1rem;
   border: none;
   border-radius: 1px;
-  background-color: #999999;
+  outline: none;
   color: white;
-  padding: 1rem 1.1rem;
+  background-color: #999999;
 }
 
 .button:hover {

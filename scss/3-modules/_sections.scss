@@ -1,43 +1,43 @@
 /* Main */
 
 .main {
-  max-width: 480px;
-  margin: 50px auto;
-  padding: 0 30px 20px;
-  border-radius: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  max-width: 480px;
+  margin: 50px auto;
+  padding: 0 30px 20px;
+  border-radius: 20px;
 
   &__title {
+    padding: 2rem 0;
     color: white;
     font-size: 3rem;
-    padding: 2rem 0;
   }
 }
 
 /* Form */
 
 .form {
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
   margin-bottom: 1rem;
 
   &__input {
     width: 70%;
+    padding: 1rem;
     border: none;
     outline: none;
-    padding: 1rem;
   }
 
   &__dropdown {
     width: 30%;
+    padding: 0.95rem;
     border: none;
     outline: none;
-    padding: 0.95rem;
   }
 }
 
@@ -55,9 +55,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
   margin: 1rem 0;
   padding-left: 1rem;
+  background-color: white;
 
   &__item {
     flex: 1;
@@ -67,12 +67,12 @@
 /* Button */
 
 .button {
-  outline: none;
+  padding: 1rem 1.1rem;
   border: none;
   border-radius: 1px;
-  background-color: #999999;
+  outline: none;
   color: white;
-  padding: 1rem 1.1rem;
+  background-color: #999999;
 
   &:hover {
     opacity: 0.9;
