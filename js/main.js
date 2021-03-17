@@ -14,7 +14,7 @@ function createTask(e) {
   e.preventDefault();
   //If text input is empty
   if (!formInput.value == "") {
-    //Create div
+    //Create task div
     const task = document.createElement("div");
     task.classList.add("task");
     tasks.appendChild(task);
@@ -41,7 +41,7 @@ function createTask(e) {
 function deleteTask(e) {
   //If target is complete button
   if (e.target.classList.contains("button--complete")) {
-    //Crossout list item text
+    //Crossout li text
     e.target.parentNode.style.textDecoration = "line-through";
     e.target.parentNode.classList.add("task--complete");
   } //If target is delete button
@@ -52,7 +52,7 @@ function deleteTask(e) {
 }
 
 function filterTask(e) {
-  /* Store each task in the task list in a tasks array using the spread operator (otherwise 
+  /* Store each task in a tasks array using the spread operator (otherwise 
     using just .children produces an HTML collection which cannot be itered over with forEach) */
   const tasksArray = [...tasks.children];
   tasksArray.forEach((task) => {
