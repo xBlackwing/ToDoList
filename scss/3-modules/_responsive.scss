@@ -1,13 +1,8 @@
 /* Media queries */
 
 @media (max-width: 480px) {
-  body {
-    display: flex;
-    justify-content: unset;
-    align-items: unset;
-  }
-
   .main {
+    height: 100vh;
     border-radius: 0;
   }
 }

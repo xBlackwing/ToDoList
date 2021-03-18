@@ -153,15 +153,8 @@ body {
 
 /* Media queries */
 @media (max-width: 480px) {
-  body {
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-pack: unset;
-            justify-content: unset;
-    -webkit-box-align: unset;
-            align-items: unset;
-  }
   .main {
+    height: 100vh;
     border-radius: 0;
   }
 }
