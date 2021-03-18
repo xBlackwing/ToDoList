@@ -2,7 +2,6 @@
 const dateDay = document.querySelector(".date__day");
 const dateMonth = document.querySelector(".date__month");
 const formInput = document.querySelector(".form__input");
-const formDropdown = document.querySelector(".form__dropdown");
 const buttonAdd = document.querySelector(".button--add");
 const tasks = document.querySelector(".tasks");
 
@@ -33,12 +32,11 @@ const months = [
 
 let currentDate = new Date();
 dateDay.textContent = `${days[currentDate.getDay()]} ${currentDate.getDate()}`;
-dateMonth.textContent = `${months[currentDate.getMonth() + 1]}`;
+dateMonth.textContent = `${months[currentDate.getMonth()]}`;
 
 //Event listeners
 buttonAdd.addEventListener("click", createTask);
 tasks.addEventListener("click", deleteTask);
-formDropdown.addEventListener("click", filterTask);
 
 //Functions
 function createTask(e) {
@@ -72,41 +70,11 @@ function createTask(e) {
 function deleteTask(e) {
   //If target is complete button
   if (e.target.classList.contains("button--complete")) {
-    //Mark as completed
-    e.target.parentNode.classList.add("task--complete");
+    //Toggle completed
+    e.target.parentNode.classList.toggle("task--complete");
   } //If target is delete button
   else if (e.target.classList.contains("button--delete")) {
     //Remove the entire parent div
     e.target.parentNode.remove();
   }
-}
-
-function filterTask(e) {
-  /* Store each task in a tasks array using the spread operator (otherwise 
-    using just .children produces an HTML collection which cannot be itered over with forEach) */
-  const tasksArray = [...tasks.children];
-  tasksArray.forEach((task) => {
-    switch (e.target.value) {
-      //Show all tasks
-      case "all":
-        task.style.display = "flex";
-        break;
-      //Show only completed tasks
-      case "completed":
-        if (task.classList.contains("task--complete")) {
-          task.style.display = "flex";
-        } else {
-          task.style.display = "none";
-        }
-        break;
-      //Show only uncompleted tasks
-      case "uncompleted":
-        if (!task.classList.contains("task--complete")) {
-          task.style.display = "flex";
-        } else {
-          task.style.display = "none";
-        }
-        break;
-    }
-  });
 }

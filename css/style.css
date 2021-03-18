@@ -13,7 +13,7 @@ body {
           justify-content: center;
   -webkit-box-align: center;
           align-items: center;
-  min-height: 100vh;
+  height: 100vh;
   font-family: "Roboto", sans-serif;
   color: #444444;
   background: #5dccf5;
@@ -33,6 +33,7 @@ body {
   -webkit-box-align: center;
           align-items: center;
   max-width: 480px;
+  width: 100%;
   margin: 0 auto;
   padding: 20px 30px;
   background-color: #ffffff;
@@ -78,16 +79,7 @@ body {
 }
 
 .form__input {
-  width: 60%;
-  border: none;
-  outline: none;
-  color: #444444;
-  font-family: "Roboto", sans-serif;
-  font-size: 1rem;
-}
-
-.form__dropdown {
-  width: 20%;
+  width: 85%;
   border: none;
   outline: none;
   color: #444444;
@@ -160,7 +152,7 @@ body {
 }
 
 /* Media queries */
-@media (max-width: 450px) {
+@media (max-width: 480px) {
   body {
     display: -webkit-box;
     display: flex;
