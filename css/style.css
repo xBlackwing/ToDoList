@@ -154,7 +154,7 @@ body {
 /* Media queries */
 @media (max-width: 480px) {
   .main {
-    height: 100vh;
+    height: 100%;
     border-radius: 0;
   }
 }
