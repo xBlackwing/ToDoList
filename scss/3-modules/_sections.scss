@@ -6,14 +6,30 @@
   justify-content: center;
   align-items: center;
   max-width: 480px;
-  margin: 50px auto;
-  padding: 0 30px 20px;
+  margin: 0 auto;
+  padding: 20px 30px;
+  background-color: $color-white;
   border-radius: 20px;
+  box-shadow: $shadow;
+}
 
-  &__title {
-    padding: 2rem 0;
-    color: white;
-    font-size: 3rem;
+/* Date */
+
+.date {
+  align-self: flex-start;
+  width: 100%;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgb(223, 223, 223);
+
+  &__day {
+    color: $color-black;
+  }
+
+  &__month {
+    margin-top: 10px;
+    color: $color-grey;
+    font-weight: 400;
   }
 }
 
@@ -24,20 +40,28 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin-bottom: 1rem;
+  margin-bottom: 50px;
+  padding: 8px 12px 8px 20px;
+  background-color: $color-white;
+  border-radius: 30px;
+  box-shadow: $shadow;
 
   &__input {
-    width: 70%;
-    padding: 1rem;
+    width: 60%;
     border: none;
     outline: none;
+    color: $color-black;
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
   }
 
   &__dropdown {
-    width: 30%;
-    padding: 0.95rem;
+    width: 20%;
     border: none;
     outline: none;
+    color: $color-black;
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
   }
 }
 
@@ -55,24 +79,32 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 1rem 0;
-  padding-left: 1rem;
-  background-color: white;
+  margin-bottom: 20px;
+  padding: 8px 12px 8px 20px;
+  background-color: $color-white;
+  border-radius: 30px;
+  box-shadow: $shadow;
 
   &__item {
     flex: 1;
+  }
+
+  &--complete {
+    text-decoration: line-through;
+    color: rgba(0, 0, 0, 0.3);
   }
 }
 
 /* Button */
 
 .button {
-  padding: 1rem 1.1rem;
+  padding: 12px 13px;
   border: none;
-  border-radius: 1px;
+  border-radius: 50%;
   outline: none;
-  color: white;
-  background-color: #999999;
+  color: $color-white;
+  background-color: rgb(93, 204, 245);
+  box-shadow: $shadow;
 
   &:hover {
     opacity: 0.9;
@@ -88,6 +120,7 @@
   }
 
   &--delete {
-    background-color: tomato;
+    margin-left: 10px;
+    background-color: $color-grey;
   }
 }

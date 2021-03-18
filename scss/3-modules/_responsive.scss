@@ -1,1 +1,13 @@
 /* Media queries */
+
+@media (max-width: 450px) {
+  body {
+    display: flex;
+    justify-content: unset;
+    align-items: unset;
+  }
+
+  .main {
+    border-radius: 0;
+  }
+}

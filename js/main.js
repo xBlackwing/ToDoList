@@ -1,8 +1,39 @@
 //Variables
+const dateDay = document.querySelector(".date__day");
+const dateMonth = document.querySelector(".date__month");
 const formInput = document.querySelector(".form__input");
 const formDropdown = document.querySelector(".form__dropdown");
 const buttonAdd = document.querySelector(".button--add");
 const tasks = document.querySelector(".tasks");
+
+const days = [
+  "Domenica",
+  "Lunedi",
+  "Martedi",
+  "Mercoledi",
+  "Giovedi",
+  "Venerdi",
+  "Sabato",
+];
+
+const months = [
+  "Gennaio",
+  "Febbraio",
+  "Marzo",
+  "Aprile",
+  "Maggio",
+  "Giugno",
+  "Luglio",
+  "Agosto",
+  "Settembre",
+  "Ottobre",
+  "Novembre",
+  "Dicembre",
+];
+
+let currentDate = new Date();
+dateDay.textContent = `${days[currentDate.getDay()]} ${currentDate.getDate()}`;
+dateMonth.textContent = `${months[currentDate.getMonth() + 1]}`;
 
 //Event listeners
 buttonAdd.addEventListener("click", createTask);
@@ -41,8 +72,7 @@ function createTask(e) {
 function deleteTask(e) {
   //If target is complete button
   if (e.target.classList.contains("button--complete")) {
-    //Crossout li text
-    e.target.parentNode.style.textDecoration = "line-through";
+    //Mark as completed
     e.target.parentNode.classList.add("task--complete");
   } //If target is delete button
   else if (e.target.classList.contains("button--delete")) {

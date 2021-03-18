@@ -23,10 +23,14 @@
   <body>
     <!-- Wrapper -->
     <div class="main">
-      <h1 class="main__title">To Do List</h1>
+      <!-- Date -->
+      <div class="date">
+        <h1 class="date__day"></h1>
+        <h2 class="date__month"></h2>
+      </div>
       <!-- Form -->
       <form class="form">
-        <input type="text" class="form__input" />
+        <input type="text" class="form__input" placeholder="Aggiungi task" />
         <button type="submit" class="button button--add">
           <i class="button__icon fas fa-plus"></i>
         </button>
@@ -40,10 +44,7 @@
       <div class="tasks__container">
         <ul class="tasks">
           <!-- Task -->
-          <div
-            class="task task--complete"
-            style="text-decoration: line-through"
-          >
+          <div class="task task--complete">
             <li class="task__item">Svegliarsi presto</li>
             <button class="button button--complete">
               <i class="button__icon fas fa-check"></i></button
