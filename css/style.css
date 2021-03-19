@@ -17,8 +17,8 @@ body {
   font-family: "Roboto", sans-serif;
   color: #444444;
   background: #5dccf5;
-  background: -webkit-gradient(linear, left top, left bottom, from(#5dccf5), to(#1939a8));
-  background: linear-gradient(180deg, #5dccf5 0%, #1939a8 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#5dccf5), to(#1939a8));
+  background: linear-gradient(90deg, #5dccf5 0%, #1939a8 100%);
 }
 
 /* Main */
@@ -34,7 +34,7 @@ body {
           align-items: center;
   max-width: 480px;
   width: 100%;
-  margin: 0 auto;
+  margin: auto;
   padding: 20px 30px;
   background-color: #ffffff;
   border-radius: 20px;
@@ -156,5 +156,6 @@ body {
   .main {
     height: 100%;
     border-radius: 0;
+    overflow: auto;
   }
 }
